@@ -1,4 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { GetStocks, StocksFeatureState } from '../../+state';
 
 @Component({
   selector: 'stock-list',
@@ -7,7 +9,9 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None,
 })
 export class StockListComponent implements OnInit {
-  constructor() {}
+  constructor(private store: Store<StocksFeatureState>) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.dispatch(new GetStocks());
+  }
 }
