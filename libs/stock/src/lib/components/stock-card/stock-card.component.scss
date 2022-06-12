@@ -5,6 +5,10 @@
     justify-content: center;
   }
   &__item {
+    background-color: #e0e0e0;
+    &--active {
+      background-color: #4caf50;
+    }
     display: flex;
     flex: 0 0 200px;
     gap: 1.5rem;
@@ -12,7 +16,6 @@
     align-items: center;
     padding: 4rem 1rem 2rem;
     margin: 1rem;
-    background-color: #4caf50;
     color: #263238;
     border-radius: 10px;
     &__title {
@@ -74,7 +77,7 @@
           left: 4px;
           bottom: 5px;
           background-color: #6e7781;
-          transition: 0.4s;
+          transition: 0.3s;
           border-radius: 50%;
         }
       }

@@ -1,6 +1,9 @@
 <div class="stock-list">
   <ng-container *ngIf="stocksList.length > 0; else showResiliencyScreen">
-    <stock-card [stocksList]="stocksList"></stock-card>
+    <stock-card
+      [stocksList]="stocksList"
+      (notifyToggle)="onNotifyToggle($event)"
+    ></stock-card>
   </ng-container>
 </div>
 <ng-template #showResiliencyScreen>

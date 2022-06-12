@@ -32,3 +32,14 @@ describe('GetStocksFail', () => {
     expect(action).toMatchSnapshot();
   });
 });
+
+describe('SetStocks', () => {
+  test('should create an instance', () => {
+    const action = new fromStocks.SetStocks({});
+    expect(action).toEqual({
+      type: fromStocks.StocksActionTypes.SetStocks,
+      payload: {},
+    });
+    expect(action).toMatchSnapshot();
+  });
+});
