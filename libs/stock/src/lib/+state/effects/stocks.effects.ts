@@ -17,9 +17,10 @@ export class StocksEffects {
     switchMap(() =>
       this.stockService.getStocks(stocksSymbol).pipe(
         map((response: any) => {
-          return new fromStocksAction.GetStocksSuccess(
+          const formatResponse = this.stockService.formatStocksResponse(
             response?.quoteResponse?.result
           );
+          return new fromStocksAction.GetStocksSuccess(formatResponse);
         }),
         catchError((err: Error) => of(new fromStocksAction.GetStocksFail(err)))
       )

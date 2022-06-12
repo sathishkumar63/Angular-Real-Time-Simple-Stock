@@ -6,9 +6,12 @@
   }
   &__item {
     display: flex;
+    flex: 1 0 200px;
+    gap: 1.5rem;
     flex-direction: column;
     align-items: center;
-    padding: 2.5rem 4rem 1rem;
+    justify-content: center;
+    padding: 2rem;
     margin: 1rem;
     background-color: #4caf50;
     color: #263238;
@@ -16,20 +19,15 @@
     &__title {
       font-weight: 700;
       font-size: 36px;
-      margin: 0 0 1rem;
+      text-align: center;
     }
-    &__current-price {
-      font-size: 24px;
-      margin: 0 0 1rem;
+    &__current-price,
+    &__vol {
+      font-size: 26px;
     }
     &__daily-high-price,
     &__daily-low-price {
       font-size: 20px;
-      margin: 0;
-    }
-    &__vol {
-      font-size: 26px;
-      margin: 1rem 0;
     }
     &__switch {
       position: relative;
@@ -69,7 +67,7 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #bfbfbf;
+        background-color: #b9b9b9;
         transition: 0.4s;
         border-radius: 40px;
         &:before {
