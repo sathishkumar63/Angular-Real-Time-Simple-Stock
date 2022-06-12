@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'stock-card',
@@ -6,8 +6,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./stock-card.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class StockCardComponent implements OnInit {
-  constructor() {}
-
-  ngOnInit(): void {}
+export class StockCardComponent {
+  @Input() stocksList: any[];
 }

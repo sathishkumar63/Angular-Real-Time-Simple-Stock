@@ -1,8 +1,8 @@
 <div class="stock-list">
-  <stock-card></stock-card>
-  <stock-card></stock-card>
-  <stock-card></stock-card>
-  <stock-card></stock-card>
-  <stock-card></stock-card>
-  <stock-card></stock-card>
+  <ng-container *ngIf="stocksList.length > 0; else showResiliencyScreen">
+    <stock-card [stocksList]="stocksList"></stock-card>
+  </ng-container>
 </div>
+<ng-template #showResiliencyScreen>
+  <p>We're sorry. There are no stocks</p>
+</ng-template>

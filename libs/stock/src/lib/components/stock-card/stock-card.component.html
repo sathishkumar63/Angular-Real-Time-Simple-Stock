@@ -1,11 +1,13 @@
-<div class="stock-card">
-  <p class="stock-card__title">FB</p>
-  <p class="stock-card__current-price">$36.85</p>
-  <p class="stock-card__daily-high-price">+12.36</p>
-  <p class="stock-card__daily-low-price">(34.08%)</p>
-  <p class="stock-card__vol">VOL:8640</p>
-  <label class="stock-card__switch">
-    <input type="checkbox" />
-    <span class="stock-card__switch--slider"></span>
-  </label>
+<div class="stock-card__group">
+  <div class="stock-card__item" *ngFor="let stock of stocksList">
+    <p class="stock-card__item__title">FB</p>
+    <p class="stock-card__item__current-price">$36.85</p>
+    <p class="stock-card__item__daily-high-price">+12.36</p>
+    <p class="stock-card__item__daily-low-price">(34.08%)</p>
+    <p class="stock-card__item__vol">VOL:8640</p>
+    <label class="stock-card__item__switch">
+      <input type="checkbox" class="stock-card__item__checkbox" />
+      <span class="stock-card__item__switch--slider"></span>
+    </label>
+  </div>
 </div>
