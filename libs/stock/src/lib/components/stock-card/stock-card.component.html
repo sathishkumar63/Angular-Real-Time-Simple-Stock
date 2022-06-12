@@ -1,16 +1,13 @@
 <div class="stock-card__group">
   <div class="stock-card__item" *ngFor="let stock of stocksList">
     <p class="stock-card__item__title">
-      {{ stock.name || stock.symbol | uppercase }}
+      {{ stock.symbol | uppercase }}
     </p>
     <p class="stock-card__item__current-price">
       {{ stock.currentPrice | currency: stock.currency }}
     </p>
-    <p class="stock-card__item__daily-high-price">+{{ stock.dayHighPrice }}</p>
-    <p class="stock-card__item__daily-low-price">-{{ stock.dayLowPrice }}</p>
-    <p class="stock-card__item__vol">
-      VOL:{{ stock.regularMarketVolume | number }}
-    </p>
+    <p class="stock-card__item__daily-high-price">{{ stock.dayHighPrice | number : '1.2-2' }}</p>
+    <p class="stock-card__item__daily-low-price">{{ stock.dayLowPrice | number : '1.2-2' }}</p>
     <label class="stock-card__item__switch">
       <input type="checkbox" class="stock-card__item__checkbox" />
       <span class="stock-card__item__switch--slider"></span>
