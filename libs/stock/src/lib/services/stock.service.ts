@@ -13,4 +13,18 @@ export class StockService {
     const uri = `https://cors-anywhere.herokuapp.com/query1.finance.yahoo.com/v7/finance/quote?symbols=${symbols.join()}`;
     return this.http.get(uri);
   }
+
+  formatStocksResponse(stocks: any[]): any[] {
+    return stocks?.map((stock) => ({
+      name: stock.displayName,
+      symbol: stock.symbol,
+      currency: stock.currency,
+      currentPrice: stock.regularMarketPrice,
+      dayHighPrice: stock.regularMarketDayHigh,
+      dayLowPrice: stock.regularMarketDayLow,
+      fiftyTwoWeekLow: stock.fiftyTwoWeekLow,
+      fiftyTwoWeekHigh: stock.fiftyTwoWeekHigh,
+      regularMarketVolume: stock.regularMarketVolume
+    }));
+  }
 }

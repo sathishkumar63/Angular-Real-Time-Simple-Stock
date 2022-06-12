@@ -1,12 +1,14 @@
 export const stocksSymbol: string[] = [
-  'AMZN',
-  'UBER',
   'GOOG',
   'GOOGL',
   'MSFT',
   'AAPL',
   'TSLA',
-  'CCL',
+  'AMZN',
+  'UBER',
+  'DIDI',
+  'META',
+  'NFLX',
   'CHIK',
   'GLD',
   'IAU',
@@ -17,5 +19,4 @@ export const stocksSymbol: string[] = [
   'ETH-CAD',
   'USDT-USD',
   'USDC-USD',
-  'BNB-USD',
 ];
