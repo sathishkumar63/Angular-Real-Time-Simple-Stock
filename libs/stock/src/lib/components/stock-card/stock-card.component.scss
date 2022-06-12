@@ -1,0 +1,82 @@
+.stock-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 4rem 1rem;
+  margin: 1rem;
+  background-color: #4caf50;
+  color: #263238;
+  border-radius: 10px;
+  &__title {
+    font-weight: 700;
+    font-size: 36px;
+    margin: 0 0 1rem;
+  }
+  &__current-price {
+    font-size: 24px;
+    margin: 0 0 1rem;
+  }
+  &__daily-high-price,
+  &__daily-low-price {
+    font-size: 20px;
+    margin: 0;
+  }
+  &__vol {
+    font-size: 26px;
+    margin: 1rem 0;
+  }
+  &__switch {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    input {
+      width: 0;
+    }
+    &--slider:after {
+      content: 'OFF';
+      display: block;
+      position: absolute;
+      transform: translate(-50%, -50%);
+      top: 50%;
+      left: 60%;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+    }
+    input:checked + .stock-card__switch--slider {
+      background-color: #00476a;
+      &:before {
+        transform: translateX(60px);
+        background-color: #009688;
+      }
+      &:after {
+        content: 'ON';
+        left: 40%;
+        color: #009688;
+      }
+    }
+    &--slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #bfbfbf;
+      transition: 0.4s;
+      border-radius: 40px;
+      &:before {
+        position: absolute;
+        content: '';
+        height: 30px;
+        width: 30px;
+        left: 4px;
+        bottom: 5px;
+        background-color: #6e7781;
+        transition: 0.4s;
+        border-radius: 50%;
+      }
+    }
+  }
+}
