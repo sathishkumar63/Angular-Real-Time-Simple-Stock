@@ -2,10 +2,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { StockModule } from '@task/stock';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, StockModule],
+  imports: [BrowserModule, StockModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
