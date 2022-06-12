@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GetStocks should create an instance 1`] = `
+GetStocks {
+  "type": "[Stocks] Get",
+}
+`;
+
+exports[`GetStocksFail should create an instance 1`] = `
+GetStocksFail {
+  "type": "[Stocks] Get Fail",
+}
+`;
+
+exports[`GetStocksSuccess should create an instance 1`] = `
+GetStocksSuccess {
+  "payload": Array [],
+  "type": "[Stocks] Get Success",
+}
+`;
