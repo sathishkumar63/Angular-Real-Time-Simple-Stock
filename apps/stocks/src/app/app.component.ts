@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'task-root',
+  selector: 'stocks-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })

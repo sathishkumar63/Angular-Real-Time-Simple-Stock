@@ -10,7 +10,7 @@
       },
       "root": "apps/stocks",
       "sourceRoot": "apps/stocks/src",
-      "prefix": "task",
+      "prefix": "stocks",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -124,7 +124,7 @@
       "projectType": "library",
       "root": "libs/stock",
       "sourceRoot": "libs/stock/src",
-      "prefix": "task",
+      "prefix": "stock",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
