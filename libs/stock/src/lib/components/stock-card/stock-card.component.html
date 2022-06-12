@@ -1,15 +1,28 @@
 <div class="stock-card__group">
-  <div class="stock-card__item" *ngFor="let stock of stocksList">
+  <div
+    class="stock-card__item"
+    *ngFor="let stock of stocksList"
+    [class.stock-card__item--active]="stock.isActive"
+  >
     <p class="stock-card__item__title">
       {{ stock.symbol | uppercase }}
     </p>
     <p class="stock-card__item__current-price">
       {{ stock.currentPrice | currency: stock.currency }}
     </p>
-    <p class="stock-card__item__daily-high-price">{{ stock.dayHighPrice | number : '1.2-2' }}</p>
-    <p class="stock-card__item__daily-low-price">{{ stock.dayLowPrice | number : '1.2-2' }}</p>
+    <p class="stock-card__item__daily-high-price">
+      {{ stock.dayHighPrice | number: '1.2-2' }}
+    </p>
+    <p class="stock-card__item__daily-low-price">
+      {{ stock.dayLowPrice | number: '1.2-2' }}
+    </p>
     <label class="stock-card__item__switch">
-      <input type="checkbox" class="stock-card__item__checkbox" />
+      <input
+        type="checkbox"
+        class="stock-card__item__checkbox"
+        [checked]="stock.isActive"
+        (click)="onToggle(stock, $event)"
+      />
       <span class="stock-card__item__switch--slider"></span>
     </label>
   </div>

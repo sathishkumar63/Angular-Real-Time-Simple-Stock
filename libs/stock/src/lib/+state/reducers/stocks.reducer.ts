@@ -36,6 +36,13 @@ export function stocksReducer(
         loading: false,
         loaded: false,
       };
+    case StocksActionTypes.SetStocks:
+      return {
+        ...state,
+        data: state.data?.map((item) =>
+          item.symbol === action.payload.symbol ? action.payload : item
+        ),
+      };
     default:
       return state;
   }

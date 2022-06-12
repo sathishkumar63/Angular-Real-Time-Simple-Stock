@@ -2,7 +2,12 @@ import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
-import { GetStocks, getStocksData, StocksFeatureState } from '../../+state';
+import {
+  GetStocks,
+  getStocksData,
+  SetStocks,
+  StocksFeatureState,
+} from '../../+state';
 
 @Component({
   selector: 'stock-list',
@@ -26,11 +31,12 @@ export class StockListComponent implements OnInit, OnDestroy {
       this.store
         .select(getStocksData)
         .pipe(filter((res) => !!res))
-        .subscribe((stocks: any[]) => {
-          console.log({ stocks });
-          this.stocksList = stocks;
-        })
+        .subscribe((stocks: any[]) => (this.stocksList = stocks))
     );
+  }
+
+  onNotifyToggle(stock: any) {
+    this.store.dispatch(new SetStocks(stock));
   }
 
   ngOnDestroy(): void {
