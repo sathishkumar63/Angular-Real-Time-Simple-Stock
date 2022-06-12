@@ -6,6 +6,7 @@ import { StockRoutingModule } from './stock.routing.module';
 import { StockListComponent, StockRootComponent } from './containers';
 import { StockCardComponent } from './components';
 import * as fromStocks from './+state';
+import { StockService } from './services';
 
 @NgModule({
   imports: [
@@ -16,5 +17,6 @@ import * as fromStocks from './+state';
   ],
   declarations: [StockRootComponent, StockListComponent, StockCardComponent],
   exports: [StockRootComponent],
+  providers: [StockService],
 })
 export class StockModule {}

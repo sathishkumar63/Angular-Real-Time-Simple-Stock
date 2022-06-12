@@ -17,6 +17,7 @@ export class GetStocksSuccess implements Action {
 
 export class GetStocksFail implements Action {
   readonly type = StocksActionTypes.GetStocksFail;
+  constructor(public payload: Error) {}
 }
 
 export type StocksAction = GetStocks | GetStocksSuccess | GetStocksFail;

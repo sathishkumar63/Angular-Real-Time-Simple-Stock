@@ -23,8 +23,12 @@ describe('GetStocksSuccess', () => {
 
 describe('GetStocksFail', () => {
   it('should create an instance', () => {
-    const action = new fromStocks.GetStocksFail();
-    expect(action).toBeTruthy();
+    const error = new Error('error');
+    const action = new fromStocks.GetStocksFail(error);
+    expect(action).toEqual({
+      type: fromStocks.StocksActionTypes.GetStocksFail,
+      payload: error,
+    });
     expect(action).toMatchSnapshot();
   });
 });
