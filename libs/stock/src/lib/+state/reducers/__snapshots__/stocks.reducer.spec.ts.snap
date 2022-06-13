@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stocks Reducer GetStocks should return new state with loading true 1`] = `
+Object {
+  "data": null,
+  "loaded": false,
+  "loading": true,
+}
+`;
+
+exports[`Stocks Reducer GetStocksFail should return new state with loading and loaded false 1`] = `
+Object {
+  "data": null,
+  "loaded": false,
+  "loading": false,
+}
+`;
+
+exports[`Stocks Reducer GetStocksSuccess should return new state 1`] = `
+Object {
+  "data": Array [
+    Object {
+      "currency": "USD",
+      "currentPrice": 2228.55,
+      "dayHighPrice": 2269.94,
+      "dayLowPrice": 2217.22,
+      "fiftyTwoWeekHigh": 3042,
+      "fiftyTwoWeekLow": 2044.16,
+      "name": "Alphabet",
+      "regularMarketVolume": 1567487,
+      "symbol": "GOOG",
+    },
+    Object {
+      "currency": "USD",
+      "currentPrice": 252.99,
+      "dayHighPrice": 260.54,
+      "dayLowPrice": 252.86,
+      "fiftyTwoWeekHigh": 349.67,
+      "fiftyTwoWeekLow": 246.44,
+      "name": "Microsoft",
+      "regularMarketVolume": 31445841,
+      "symbol": "MSFT",
+    },
+  ],
+  "loaded": true,
+  "loading": false,
+}
+`;
+
+exports[`Stocks Reducer SetStocks should update and return the new state 1`] = `
+Object {
+  "data": undefined,
+  "loaded": false,
+  "loading": false,
+}
+`;

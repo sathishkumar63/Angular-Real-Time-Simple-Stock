@@ -8,6 +8,7 @@ import {
   SetStocks,
   StocksFeatureState,
 } from '../../+state';
+import { IStock } from '../../models';
 
 @Component({
   selector: 'stock-list',
@@ -16,7 +17,7 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class StockListComponent implements OnInit, OnDestroy {
-  stocksList: any[] = [];
+  stocksList: IStock[] = [];
   subscriptions: Subscription = new Subscription();
 
   constructor(private store: Store<StocksFeatureState>) {}
@@ -31,11 +32,11 @@ export class StockListComponent implements OnInit, OnDestroy {
       this.store
         .select(getStocksData)
         .pipe(filter((res) => !!res))
-        .subscribe((stocks: any[]) => (this.stocksList = stocks))
+        .subscribe((stocks: IStock[]) => (this.stocksList = stocks))
     );
   }
 
-  onNotifyToggle(stock: any) {
+  onNotifyToggle(stock: IStock) {
     this.store.dispatch(new SetStocks(stock));
   }
 

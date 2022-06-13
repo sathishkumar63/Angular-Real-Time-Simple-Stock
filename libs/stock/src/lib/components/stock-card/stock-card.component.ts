@@ -5,6 +5,7 @@ import {
   Output,
   ViewEncapsulation,
 } from '@angular/core';
+import { IStock } from '../../models';
 
 @Component({
   selector: 'stock-card',
@@ -13,15 +14,16 @@ import {
   encapsulation: ViewEncapsulation.None,
 })
 export class StockCardComponent {
-  @Input() stocksList: any[];
-  @Output() notifyToggle = new EventEmitter();
+  @Input() stocksList: IStock[];
+  @Output() notifyToggle = new EventEmitter<IStock>();
 
-  onToggle(stock: any, event: any) {
+  onToggle(stock: IStock, event: Event) {
+    const ischecked = (<HTMLInputElement>event.target).checked;
     setTimeout(
       () =>
         this.notifyToggle.emit({
           ...stock,
-          isActive: event.target.checked,
+          isActive: ischecked,
         }),
       300
     );

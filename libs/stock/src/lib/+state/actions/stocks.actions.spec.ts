@@ -1,3 +1,4 @@
+import { mockStocks } from '../../models';
 import * as fromStocks from './stocks.actions';
 
 describe('GetStocks', () => {
@@ -12,10 +13,10 @@ describe('GetStocks', () => {
 
 describe('GetStocksSuccess', () => {
   it('should create an instance', () => {
-    const action = new fromStocks.GetStocksSuccess([]);
+    const action = new fromStocks.GetStocksSuccess(mockStocks);
     expect(action).toEqual({
       type: fromStocks.StocksActionTypes.GetStocksSuccess,
-      payload: [],
+      payload: mockStocks,
     });
     expect(action).toMatchSnapshot();
   });
@@ -35,10 +36,10 @@ describe('GetStocksFail', () => {
 
 describe('SetStocks', () => {
   test('should create an instance', () => {
-    const action = new fromStocks.SetStocks({});
+    const action = new fromStocks.SetStocks(mockStocks[0]);
     expect(action).toEqual({
       type: fromStocks.StocksActionTypes.SetStocks,
-      payload: {},
+      payload: mockStocks[0],
     });
     expect(action).toMatchSnapshot();
   });

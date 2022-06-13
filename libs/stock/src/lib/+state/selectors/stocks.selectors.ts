@@ -1,4 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { IStock } from '../../models';
 import * as fromStocks from '../reducers';
 
 export const selectStocksState = createFeatureSelector<
@@ -12,7 +13,7 @@ export const getStocksState = createSelector(
 
 export const getStocksData = createSelector(
   getStocksState,
-  (state: fromStocks.StocksState) => state?.data
+  (state: fromStocks.StocksState): IStock[] => state?.data
 );
 
 export const isStocksLoaded = createSelector(
