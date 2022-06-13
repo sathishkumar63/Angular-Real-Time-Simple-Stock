@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Stocks Selectors should return loaded status 1`] = `false`;
+
+exports[`Stocks Selectors should return loading status 1`] = `false`;
+
+exports[`Stocks Selectors should return stocks data 1`] = `
+Array [
+  Object {
+    "currency": "USD",
+    "currentPrice": 2228.55,
+    "dayHighPrice": 2269.94,
+    "dayLowPrice": 2217.22,
+    "fiftyTwoWeekHigh": 3042,
+    "fiftyTwoWeekLow": 2044.16,
+    "name": "Alphabet",
+    "regularMarketVolume": 1567487,
+    "symbol": "GOOG",
+  },
+  Object {
+    "currency": "USD",
+    "currentPrice": 252.99,
+    "dayHighPrice": 260.54,
+    "dayLowPrice": 252.86,
+    "fiftyTwoWeekHigh": 349.67,
+    "fiftyTwoWeekLow": 246.44,
+    "name": "Microsoft",
+    "regularMarketVolume": 31445841,
+    "symbol": "MSFT",
+  },
+]
+`;
+
+exports[`Stocks Selectors should select stocks feature state 1`] = `
+Object {
+  "stocks": Object {
+    "data": Array [
+      Object {
+        "currency": "USD",
+        "currentPrice": 2228.55,
+        "dayHighPrice": 2269.94,
+        "dayLowPrice": 2217.22,
+        "fiftyTwoWeekHigh": 3042,
+        "fiftyTwoWeekLow": 2044.16,
+        "name": "Alphabet",
+        "regularMarketVolume": 1567487,
+        "symbol": "GOOG",
+      },
+      Object {
+        "currency": "USD",
+        "currentPrice": 252.99,
+        "dayHighPrice": 260.54,
+        "dayLowPrice": 252.86,
+        "fiftyTwoWeekHigh": 349.67,
+        "fiftyTwoWeekLow": 246.44,
+        "name": "Microsoft",
+        "regularMarketVolume": 31445841,
+        "symbol": "MSFT",
+      },
+    ],
+    "loaded": true,
+    "loading": false,
+  },
+}
+`;

@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StockService formatStocksResponse should format and return the stocks 1`] = `
+Array [
+  Object {
+    "currency": "USD",
+    "currentPrice": undefined,
+    "dayHighPrice": undefined,
+    "dayLowPrice": undefined,
+    "fiftyTwoWeekHigh": 3042,
+    "fiftyTwoWeekLow": 2044.16,
+    "name": undefined,
+    "regularMarketVolume": 1567487,
+    "symbol": "GOOG",
+  },
+  Object {
+    "currency": "USD",
+    "currentPrice": undefined,
+    "dayHighPrice": undefined,
+    "dayLowPrice": undefined,
+    "fiftyTwoWeekHigh": 349.67,
+    "fiftyTwoWeekLow": 246.44,
+    "name": undefined,
+    "regularMarketVolume": 31445841,
+    "symbol": "MSFT",
+  },
+]
+`;

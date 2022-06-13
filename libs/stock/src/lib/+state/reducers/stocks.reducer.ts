@@ -1,7 +1,8 @@
+import { IStock } from '../../models';
 import { StocksAction, StocksActionTypes } from '../actions';
 
 export interface StocksState {
-  data: any[];
+  data: IStock[];
   loading: boolean;
   loaded: boolean;
 }

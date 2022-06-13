@@ -1,4 +1,5 @@
 import { Action } from '@ngrx/store';
+import { IStock } from '../../models';
 
 export enum StocksActionTypes {
   GetStocks = '[Stocks] Get',
@@ -13,7 +14,7 @@ export class GetStocks implements Action {
 
 export class GetStocksSuccess implements Action {
   readonly type = StocksActionTypes.GetStocksSuccess;
-  constructor(public payload: any) {}
+  constructor(public payload: IStock[]) {}
 }
 
 export class GetStocksFail implements Action {
@@ -23,7 +24,7 @@ export class GetStocksFail implements Action {
 
 export class SetStocks implements Action {
   readonly type = StocksActionTypes.SetStocks;
-  constructor(public payload: any) {}
+  constructor(public payload: IStock) {}
 }
 
 export type StocksAction =
