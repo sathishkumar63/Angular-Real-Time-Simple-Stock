@@ -40,7 +40,9 @@ export function stocksReducer(
       return {
         ...state,
         data: state.data?.map((item) =>
-          item.symbol === action.payload.symbol ? action.payload : item
+          item.symbol === action.payload.symbol
+            ? { ...item, ...action.payload }
+            : item
         ),
       };
     default:
