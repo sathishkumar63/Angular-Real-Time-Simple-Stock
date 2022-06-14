@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorScreenComponent should render error-screen 1`] = `
+<div
+  class="stock-error-screen"
+>
+  <h2
+    class="stock-error-screen__title"
+  >
+    Uh-oh, something went wrong.
+  </h2>
+  <p
+    class="stock-error-screen__message"
+  >
+     We are not able to load this page right now. Please refresh this page or follow this 
+    <a
+      href="https://cors-anywhere.herokuapp.com/corsdemo"
+      target="_blank"
+    >
+      link
+    </a>
+    . 
+  </p>
+</div>
+`;

@@ -1,0 +1,69 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StockListComponent getStocksList should set stocksList 1`] = `
+Array [
+  Object {
+    "currency": "USD",
+    "currentPrice": 2228.55,
+    "dayHighPrice": 2269.94,
+    "dayLowPrice": 2217.22,
+    "fiftyTwoWeekHigh": 3042,
+    "fiftyTwoWeekLow": 2044.16,
+    "name": "Alphabet",
+    "regularMarketVolume": 1567487,
+    "symbol": "GOOG",
+  },
+  Object {
+    "currency": "USD",
+    "currentPrice": 252.99,
+    "dayHighPrice": 260.54,
+    "dayLowPrice": 252.86,
+    "fiftyTwoWeekHigh": 349.67,
+    "fiftyTwoWeekLow": 246.44,
+    "name": "Microsoft",
+    "regularMarketVolume": 31445841,
+    "symbol": "MSFT",
+  },
+]
+`;
+
+exports[`StockListComponent should render resiliency error screen when the stocksList.length < 0 1`] = `
+<div
+  class="stock-list"
+>
+  
+  <stock-error-screen>
+    <div
+      class="stock-error-screen"
+    >
+      <h2
+        class="stock-error-screen__title"
+      >
+        Uh-oh, something went wrong.
+      </h2>
+      <p
+        class="stock-error-screen__message"
+      >
+         We are not able to load this page right now. Please refresh this page or follow this 
+        <a
+          href="https://cors-anywhere.herokuapp.com/corsdemo"
+          target="_blank"
+        >
+          link
+        </a>
+        . 
+      </p>
+    </div>
+  </stock-error-screen>
+</div>
+`;
+
+exports[`StockListComponent should render stocks card when the stocksList.length > 0 1`] = `
+<div
+  class="stock-list"
+>
+  
+  
+  <stock-card />
+</div>
+`;
