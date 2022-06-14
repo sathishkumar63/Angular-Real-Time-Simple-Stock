@@ -1,9 +1,10 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Subscription } from 'rxjs';
-import { filter } from 'rxjs/operators';
+import { filter, map } from 'rxjs/operators';
 import * as fromStocks from '../../+state';
-import { IStock } from '../../models';
+import { IStock, stocksSymbol } from '../../models';
+import { WebSocketService } from '../../services';
 
 @Component({
   selector: 'stock-list',
@@ -15,11 +16,29 @@ export class StockListComponent implements OnInit, OnDestroy {
   stocksList: IStock[] = [];
   subscriptions: Subscription = new Subscription();
 
-  constructor(private store: Store<fromStocks.StocksFeatureState>) {}
+  constructor(
+    private store: Store<fromStocks.StocksFeatureState>,
+    private webSocketService: WebSocketService
+  ) {}
 
   ngOnInit(): void {
     this.store.dispatch(new fromStocks.GetStocks());
     this.getStocksList();
+    if (this.webSocketService.socket$) {
+      this.webSocketService.send(stocksSymbol);
+    }
+    this.webSocketService
+      .connect()
+      .pipe(
+        map((response: any) => {
+          console.log({ response });
+        })
+      )
+      .subscribe();
+
+    this.webSocketService.socketOpen$.subscribe(() =>
+      this.webSocketService.send(stocksSymbol)
+    );
   }
 
   getStocksList() {
@@ -36,6 +55,7 @@ export class StockListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
+    this.webSocketService.unsubscribe(stocksSymbol);
     this.subscriptions?.unsubscribe();
   }
 }

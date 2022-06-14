@@ -44,6 +44,7 @@
     "@ngrx/router-store": "10.0.0",
     "@ngrx/store": "10.0.0",
     "@nrwl/angular": "10.4.15",
+    "@types/protobufjs": "^6.0.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "^0.10.2"
