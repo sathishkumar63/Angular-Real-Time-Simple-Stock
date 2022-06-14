@@ -21,7 +21,7 @@
         type="checkbox"
         class="stock-card__item__checkbox"
         [checked]="stock.isActive"
-        (click)="onToggle(stock, $event)"
+        (click)="onToggle(stock, $event.target.checked)"
       />
       <span class="stock-card__item__switch--slider"></span>
     </label>

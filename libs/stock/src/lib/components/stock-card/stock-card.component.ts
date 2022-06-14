@@ -17,13 +17,12 @@ export class StockCardComponent {
   @Input() stocksList: IStock[];
   @Output() notifyToggle = new EventEmitter<IStock>();
 
-  onToggle(stock: IStock, event: Event) {
-    const ischecked = (<HTMLInputElement>event.target).checked;
+  onToggle(stock: IStock, isChecked: boolean) {
     setTimeout(
       () =>
         this.notifyToggle.emit({
           ...stock,
-          isActive: ischecked,
+          isActive: isChecked,
         }),
       300
     );

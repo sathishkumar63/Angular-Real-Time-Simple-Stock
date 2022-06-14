@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StockCardComponent should render stocks card when the stocksList.length > 0 1`] = `
+<div
+  class="stock-card__group"
+>
+  
+  <div
+    class="stock-card__item"
+  >
+    <p
+      class="stock-card__item__title"
+    >
+       GOOG 
+    </p>
+    <p
+      class="stock-card__item__current-price"
+    >
+       $2,228.55 
+    </p>
+    <p
+      class="stock-card__item__daily-high-price"
+    >
+       2,269.94 
+    </p>
+    <p
+      class="stock-card__item__daily-low-price"
+    >
+       2,217.22 
+    </p>
+    <label
+      class="stock-card__item__switch"
+    >
+      <input
+        class="stock-card__item__checkbox"
+        type="checkbox"
+      />
+      <span
+        class="stock-card__item__switch--slider"
+      />
+    </label>
+  </div>
+  <div
+    class="stock-card__item"
+  >
+    <p
+      class="stock-card__item__title"
+    >
+       MSFT 
+    </p>
+    <p
+      class="stock-card__item__current-price"
+    >
+       $252.99 
+    </p>
+    <p
+      class="stock-card__item__daily-high-price"
+    >
+       260.54 
+    </p>
+    <p
+      class="stock-card__item__daily-low-price"
+    >
+       252.86 
+    </p>
+    <label
+      class="stock-card__item__switch"
+    >
+      <input
+        class="stock-card__item__checkbox"
+        type="checkbox"
+      />
+      <span
+        class="stock-card__item__switch--slider"
+      />
+    </label>
+  </div>
+</div>
+`;
