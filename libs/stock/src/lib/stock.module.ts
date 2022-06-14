@@ -4,7 +4,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StockRoutingModule } from './stock.routing.module';
 import { StockListComponent, StockRootComponent } from './containers';
-import { StockCardComponent } from './components';
+import { ErrorScreenComponent, StockCardComponent } from './components';
 import * as fromStocks from './+state';
 import { StockService } from './services';
 
@@ -15,7 +15,12 @@ import { StockService } from './services';
     StoreModule.forFeature(fromStocks.stocksFeatureKey, fromStocks.reducers),
     EffectsModule.forFeature(fromStocks.effects),
   ],
-  declarations: [StockRootComponent, StockListComponent, StockCardComponent],
+  declarations: [
+    StockRootComponent,
+    StockListComponent,
+    StockCardComponent,
+    ErrorScreenComponent,
+  ],
   exports: [StockRootComponent],
   providers: [StockService],
 })
