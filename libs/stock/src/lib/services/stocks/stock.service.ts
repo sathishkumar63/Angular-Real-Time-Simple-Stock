@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { IStock } from '../../models';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class StockService {
     return this.http.get(uri);
   }
 
-  formatStocksResponse(stocks: any[]): any[] {
+  formatStocksResponse(stocks: any[]): IStock[] {
     return stocks?.map((stock) => ({
       name: stock.displayName,
       symbol: stock.symbol,
@@ -24,7 +25,7 @@ export class StockService {
       dayLowPrice: stock.regularMarketDayLow,
       fiftyTwoWeekLow: stock.fiftyTwoWeekLow,
       fiftyTwoWeekHigh: stock.fiftyTwoWeekHigh,
-      regularMarketVolume: stock.regularMarketVolume
+      regularMarketVolume: stock.regularMarketVolume,
     }));
   }
 }

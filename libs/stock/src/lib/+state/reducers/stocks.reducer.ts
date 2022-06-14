@@ -40,7 +40,8 @@ export function stocksReducer(
     case StocksActionTypes.SetStocks:
       return {
         ...state,
-        data: state.data?.map((item) =>
+        data: state.data?.map((item: IStock) =>
+          (item.isActive || action.payload.isActive) &&
           item.symbol === action.payload.symbol
             ? { ...item, ...action.payload }
             : item
