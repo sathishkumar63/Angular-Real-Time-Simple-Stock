@@ -6,6 +6,14 @@ This project was generated using [Nx](https://nx.dev).
 
 [https://sathishkumar63.github.io/Angular-Real-Time-Simple-Stock/stocks](https://sathishkumar63.github.io/Angular-Real-Time-Simple-Stock/stocks)
 
+## Screen Recording
+
+
+
+https://user-images.githubusercontent.com/22043465/174099466-695ba518-f0f4-4326-8dcb-b0bdb63ecdde.mov
+
+
+
 ### Functionality
 
 - Implemented Web Socket service which pushes stock prices to the UI
@@ -15,7 +23,7 @@ This project was generated using [Nx](https://nx.dev).
 - Implemented toggling/disabling (disable/gray out/switch off stock)
 - Implemented a responsive design.
 
- ## Data displayed in mobile view:
+## Data displayed in mobile view:
 
 1. current price
 2. daily high price
