@@ -99,6 +99,9 @@
             "jestConfig": "apps/stocks/jest.config.js",
             "passWithNoTests": true
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
         }
       }
     },
