@@ -23,11 +23,6 @@
       font-size: 36px;
       text-align: center;
     }
-    &__current-price,
-    &__daily-high-price,
-    &__daily-low-price {
-      font-size: 20px;
-    }
     &__switch {
       position: relative;
       display: inline-block;
@@ -81,6 +76,9 @@
           border-radius: 50%;
         }
       }
+    }
+    .f-20 {
+      font-size: 20px;
     }
   }
 }

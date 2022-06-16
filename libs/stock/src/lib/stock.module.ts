@@ -6,7 +6,7 @@ import { StockRoutingModule } from './stock.routing.module';
 import { StockListComponent, StockRootComponent } from './containers';
 import { ErrorScreenComponent, StockCardComponent } from './components';
 import * as fromStocks from './+state';
-import { StockService, WebSocketService } from './services';
+import { DevicesService, StockService, WebSocketService } from './services';
 
 @NgModule({
   imports: [
@@ -22,6 +22,6 @@ import { StockService, WebSocketService } from './services';
     ErrorScreenComponent,
   ],
   exports: [StockRootComponent],
-  providers: [StockService, WebSocketService],
+  providers: [DevicesService, StockService, WebSocketService],
 })
 export class StockModule {}
