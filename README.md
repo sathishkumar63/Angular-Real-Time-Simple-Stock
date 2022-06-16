@@ -15,14 +15,14 @@ This project was generated using [Nx](https://nx.dev).
 - Implemented toggling/disabling (disable/gray out/switch off stock)
 - Implemented a responsive design.
 
-* data displayed in mobile view:
+ ## Data displayed in mobile view:
 
 1. current price
 2. daily high price
 3. daily low price
 4. name
 
-* data displayed in desktop view
+## Data displayed in desktop view
 
 1. current price
 2. daily high price
