@@ -40,8 +40,10 @@ describe('StockListComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  it('should render resiliency error screen when the stocksList.length < 0', () => {
-    // arrange + act
+  it('should render resiliency error screen when the stocks$.length < 0', () => {
+    // arrange
+    component.stocks$ = of();
+    // act
     fixture.detectChanges();
     const stockList = fixture.debugElement.query(By.css('.stock-list'))
       .nativeElement;
@@ -49,9 +51,9 @@ describe('StockListComponent', () => {
     expect(stockList).toMatchSnapshot();
   });
 
-  it('should render stocks card when the stocksList.length > 0', () => {
+  it('should render stocks card when the stocks$.length > 0', () => {
     // arrange
-    component.stocksList = mockStocks;
+    component.stocks$ = of(mockStocks);
     // act
     fixture.detectChanges();
     const stockList = fixture.debugElement.query(By.css('.stock-list'))
@@ -68,35 +70,6 @@ describe('StockListComponent', () => {
       component.ngOnInit();
       // assert
       expect(store.dispatch).toHaveBeenCalledWith(new fromStocks.GetStocks());
-    });
-
-    it('getStocksList method should be called', () => {
-      // arrange
-      jest.spyOn(component, 'getStocksList');
-      // act
-      component.ngOnInit();
-      // assert
-      expect(component.getStocksList).toBeCalled();
-    });
-  });
-
-  describe('getStocksList', () => {
-    it('should call getStocksData selector', () => {
-      // arrange
-      const selectSpy = jest.spyOn(store, 'select');
-      // act
-      component.getStocksList();
-      // assert
-      expect(selectSpy).toHaveBeenCalledWith(fromStocks.getStocksData);
-    });
-
-    it('should set stocksList', () => {
-      // arrange
-      jest.spyOn(store, 'select').mockImplementation(() => of(mockStocks));
-      // act
-      component.getStocksList();
-      // assert
-      expect(component.stocksList).toMatchSnapshot();
     });
   });
 

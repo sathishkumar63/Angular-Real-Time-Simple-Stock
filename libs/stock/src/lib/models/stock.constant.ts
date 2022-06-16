@@ -1,20 +1,11 @@
+
+export const QUOTE_STREAMER_WEBSOCKET = 'wss://streamer.finance.yahoo.com';
+export const QUOTE_URL = 'https://query1.finance.yahoo.com/v7/finance/quote?';
+
 export const stocksSymbol: string[] = [
-  'GOOG',
-  'GOOGL',
-  'MSFT',
+  'AMZN',
   'AAPL',
   'TSLA',
-  'AMZN',
-  'UBER',
-  'META',
-  'CHIK',
-  'GLD',
-  'IAU',
-  'BTC-USD',
-  'ETH-USD',
-  'DOGE-USD',
-  'SHIB-USD',
-  'ETH-CAD',
-  'USDT-USD',
-  'USDC-USD',
+  'GOOG',
+  'MSFT'
 ];

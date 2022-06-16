@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Subscription } from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import {  map } from 'rxjs/operators';
 import * as fromStocks from '../../+state';
 import { IStock, stocksSymbol } from '../../models';
 import { WebSocketService } from '../../services';
@@ -13,8 +13,7 @@ import { WebSocketService } from '../../services';
   encapsulation: ViewEncapsulation.None,
 })
 export class StockListComponent implements OnInit, OnDestroy {
-  stocksList: IStock[] = [];
-  subscriptions: Subscription = new Subscription();
+  stocks$: Observable<IStock[]>;
 
   constructor(
     private store: Store<fromStocks.StocksFeatureState>,
@@ -23,7 +22,9 @@ export class StockListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.store.dispatch(new fromStocks.GetStocks());
-    this.getStocksList();
+    this.stocks$ = this.store
+    .select(fromStocks.getStocksData);
+
     if (this.webSocketService.socket$) {
       this.webSocketService.send(stocksSymbol);
     }
@@ -31,7 +32,7 @@ export class StockListComponent implements OnInit, OnDestroy {
       .connect()
       .pipe(
         map((response: any) => {
-          console.log({ response });
+          this.store.dispatch(new fromStocks.SetStocks(response));
         })
       )
       .subscribe();
@@ -41,21 +42,11 @@ export class StockListComponent implements OnInit, OnDestroy {
     );
   }
 
-  getStocksList() {
-    this.subscriptions.add(
-      this.store
-        .select(fromStocks.getStocksData)
-        .pipe(filter((res) => !!res))
-        .subscribe((stocks: IStock[]) => (this.stocksList = stocks))
-    );
-  }
-
   onNotifyToggle(stock: IStock) {
     this.store.dispatch(new fromStocks.SetStocks(stock));
   }
 
   ngOnDestroy(): void {
     this.webSocketService.unsubscribe(stocksSymbol);
-    this.subscriptions?.unsubscribe();
   }
 }
