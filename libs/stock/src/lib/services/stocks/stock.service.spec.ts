@@ -4,7 +4,7 @@ import {
   HttpTestingController,
 } from '@angular/common/http/testing';
 import { TestBed } from '@angular/core/testing';
-import { mockStocks } from '../../models';
+import { mockStocks, QUOTE_URL } from '../../models';
 import { StockService } from './stock.service';
 
 describe('StockService', () => {
@@ -29,7 +29,7 @@ describe('StockService', () => {
         .getStocks(['tsla'])
         .subscribe((data) => expect(data).toEqual(mockStocks));
       const req = mockHttp.expectOne(
-        'https://cors-anywhere.herokuapp.com/query1.finance.yahoo.com/v7/finance/quote?symbols=tsla'
+        `https://cors-anywhere.herokuapp.com/${QUOTE_URL}symbols=tsla`
       );
       expect(req.request.method).toEqual('GET');
       req.flush(mockStocks);

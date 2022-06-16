@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { IStock } from '../../models';
+import { IStock, QUOTE_URL } from '../../models';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ export class StockService {
 
   getStocks(symbols: string[]): Observable<any> {
     // HttpRequest has been blocked by CORS policy. So, add cors-anywhere.herokuapp.com to this link.
-    const uri = `https://cors-anywhere.herokuapp.com/query1.finance.yahoo.com/v7/finance/quote?symbols=${symbols?.join()}`;
+    const uri = `https://cors-anywhere.herokuapp.com/${QUOTE_URL}symbols=${symbols?.join()}`;
     return this.http.get(uri);
   }
 
