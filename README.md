@@ -1,68 +1,50 @@
-# Task
+# Real Time Yahoo Finance Simple Stock.
 
 This project was generated using [Nx](https://nx.dev).
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+## Demo Link
 
-## Quick Start & Documentation
+[https://sathishkumar63.github.io/Angular-Real-Time-Simple-Stock/stocks](https://sathishkumar63.github.io/Angular-Real-Time-Simple-Stock/stocks)
 
-[Nx Documentation](https://nx.dev/angular)
+### Functionality
 
-## Adding capabilities to your workspace
+- Implemented Web Socket service which pushes stock prices to the UI
+- Implemented real-time price updates for these stocks ( amazon, apple, google,
+  microsoft, tesla). Data is retrieved from https://finance.yahoo.com/ (i.e.:
+  https://finance.yahoo.com/quote/AAPL/)
+- Implemented toggling/disabling (disable/gray out/switch off stock)
+- Implemented a responsive design.
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
+* data displayed in mobile view:
 
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
+1. current price
+2. daily high price
+3. daily low price
+4. name
 
-Below are our core plugins:
+* data displayed in desktop view
 
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
+1. current price
+2. daily high price
+3. daily low price
+4. name
+5. 52 week high price
+6. 52 week low price
 
-## Generate an application
+### Prerequisite
 
-Run `ng g @nrwl/angular:app my-app` to generate an application.
+Install angular cli version >=10.1.7 and node version >=v12.22.12
 
-> You can use any of the plugins above to generate applications as well.
+```
+$ npm i -g @angular/cli
+```
 
-When using Nx, you can create multiple applications and libraries in the same workspace.
+### Install the dependencies.
 
-## Generate a library
+```
+$ npm install
+```
 
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
+### Development server
 
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are sharable across libraries and applications. They can be imported from `@task/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+Run `ng serve stocks`. Navigate to http://localhost:4200/stocks.
