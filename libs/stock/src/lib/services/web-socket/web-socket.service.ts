@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { EMPTY, Observable, Subject, timer } from 'rxjs';
-import { catchError, delayWhen, retryWhen, share, tap } from 'rxjs/operators';
-import { webSocket, WebSocketSubject } from 'rxjs/websocket';
+import { catchError, delayWhen, retryWhen, share } from 'rxjs/operators';
+import { webSocket, WebSocketSubject } from 'rxjs/webSocket';
 import { IStock, QUOTE_STREAMER_WEBSOCKET } from '../../models';
 import { getProtoRoot } from './yahoo-proto';
 
