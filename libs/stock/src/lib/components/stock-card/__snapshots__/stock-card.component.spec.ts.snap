@@ -14,19 +14,36 @@ exports[`StockCardComponent should render stocks card when the stocksList.length
        GOOG 
     </p>
     <p
-      class="stock-card__item__current-price"
+      class="stock-card__item__current-price f-20"
     >
        $2,228.55 
     </p>
     <p
-      class="stock-card__item__daily-high-price"
+      class="stock-card__item__daily-high-price f-20"
     >
        2,269.94 
     </p>
     <p
-      class="stock-card__item__daily-low-price"
+      class="stock-card__item__daily-low-price f-20"
     >
        2,217.22 
+    </p>
+    
+    
+    <p
+      class="stock-card__item__fiftyTwoWeekLow f-20"
+    >
+       2,044.16 
+    </p>
+    <p
+      class="stock-card__item__fiftyTwoWeekHigh f-20"
+    >
+       3,042.00 
+    </p>
+    <p
+      class="stock-card__item__regularMarketVolume f-20"
+    >
+       1,567,487 
     </p>
     <label
       class="stock-card__item__switch"
@@ -49,19 +66,36 @@ exports[`StockCardComponent should render stocks card when the stocksList.length
        MSFT 
     </p>
     <p
-      class="stock-card__item__current-price"
+      class="stock-card__item__current-price f-20"
     >
        $252.99 
     </p>
     <p
-      class="stock-card__item__daily-high-price"
+      class="stock-card__item__daily-high-price f-20"
     >
        260.54 
     </p>
     <p
-      class="stock-card__item__daily-low-price"
+      class="stock-card__item__daily-low-price f-20"
     >
        252.86 
+    </p>
+    
+    
+    <p
+      class="stock-card__item__fiftyTwoWeekLow f-20"
+    >
+       246.44 
+    </p>
+    <p
+      class="stock-card__item__fiftyTwoWeekHigh f-20"
+    >
+       349.67 
+    </p>
+    <p
+      class="stock-card__item__regularMarketVolume f-20"
+    >
+       31,445,841 
     </p>
     <label
       class="stock-card__item__switch"

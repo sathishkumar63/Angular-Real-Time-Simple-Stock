@@ -7,15 +7,26 @@
     <p class="stock-card__item__title">
       {{ stock.symbol | uppercase }}
     </p>
-    <p class="stock-card__item__current-price">
+    <p class="stock-card__item__current-price f-20">
       {{ stock.currentPrice | currency: stock.currency }}
     </p>
-    <p class="stock-card__item__daily-high-price">
+    <p class="stock-card__item__daily-high-price f-20">
       {{ stock.dayHighPrice | number: '1.2-2' }}
     </p>
-    <p class="stock-card__item__daily-low-price">
+    <p class="stock-card__item__daily-low-price f-20">
       {{ stock.dayLowPrice | number: '1.2-2' }}
     </p>
+    <ng-container *ngIf="!(devicesService.isMobile$ | async)">
+      <p class="stock-card__item__fiftyTwoWeekLow f-20">
+        {{ stock.fiftyTwoWeekLow | number: '1.2-2' }}
+      </p>
+      <p class="stock-card__item__fiftyTwoWeekHigh f-20">
+        {{ stock.fiftyTwoWeekHigh | number: '1.2-2' }}
+      </p>
+      <p class="stock-card__item__regularMarketVolume f-20">
+        {{ stock.regularMarketVolume | number }}
+      </p>
+    </ng-container>
     <label class="stock-card__item__switch">
       <input
         type="checkbox"
